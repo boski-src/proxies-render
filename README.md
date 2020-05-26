@@ -1,10 +1,10 @@
-#####Commands
+##### Commands
   - help    
    	- Display help for proxies-renderer
   - render  
    	- Render proxy list
 
-#####Render command options:
+##### Render command options:
   - -c, --country=country  
   	- Country code (default: US)
   - -o, --output=output    
@@ -12,7 +12,7 @@
   - -s, --source=source    
     - Source of proxies (eg. proxynova.com, spys.one)
 
-#####Example output (proxies.json)
+##### Example output (proxies.json)
 ```
 [
 	{
