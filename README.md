@@ -5,45 +5,28 @@
    	- Render proxy list
 
 ##### Render command options:
-  - -c, --country=country  
-  	- Country code (default: US)
-  - -o, --output=output    
-  	- Output file path (default: proxies.json)
-  - -s, --source=source    
-    - Source of proxies (eg. proxynova.com, spys.one)
+  -c, --country=country  [default: US] Country code
+  -o, --output=output    [default: proxies.json] Output file path
+  -s, --source=source    [default: spys.one] Source of proxies (eg. proxynova.com, spys.one)
+  --ssl=ssl              Force ssl proxies
+  --testUrl=testUrl      [default: https://www.google.com/?q=test] Test url for proxy
 
 ##### Example output (proxies.json)
 ```
 [
-	{
-		"ip": "80.211.246.8",
-		"port": "8080",
-		"source": "spys.com",
-		"score": 65.76242857142857
-	},
-	{
-		"ip": "83.4.126.109",
-		"port": "8080",
-		"source": "spys.com",
-		"score": 60.37528571428572
-	},
-	{
-		"ip": "88.199.21.77",
-		"port": "80",
-		"source": "spys.com",
-		"score": 58.92242857142857
-	},
-	{
-		"ip": "185.238.239.20",
-		"port": "8090",
-		"source": "spys.com",
-		"score": 9.738428571428571
-	},
-	{
-		"ip": "46.171.63.106",
-		"port": "8080",
-		"source": "spys.com",
-		"score": 8.596857142857143
-	}
+  {
+    "ip": "82.119.170.106",
+    "port": "8080",
+    "source": "proxynova.com",
+    "score": 295.4157228571429,
+    "responseTime": 1037
+  },
+  {
+    "ip": "80.187.140.26",
+    "port": "8080",
+    "source": "proxynova.com",
+    "score": 352.7370592857143,
+    "responseTime": 1874
+  }
 ]
 ```
