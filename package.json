@@ -1,0 +1,32 @@
+{
+  "name": "proxies-render",
+  "version": "1.0.0",
+  "description": "",
+  "main": "old/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "boski-src (Oskar Serafin)",
+  "license": "ISC",
+  "files": [
+    "/bin",
+    "/src"
+  ],
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "proxies-render",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "dependencies": {
+    "@oclif/command": "^1.6.1",
+    "@oclif/config": "^1.15.1",
+    "@oclif/plugin-help": "^3.0.1",
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "globby": "^11.0.0",
+    "puppeteer": "^3.1.0",
+    "random-useragent": "^0.3.1"
+  }
+}
