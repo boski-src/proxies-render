@@ -1,10 +1,10 @@
 const axios = require("axios")
 const puppeteer = require("puppeteer")
 const { parseNova, parseSpys } = require('./parser')
-const { sortProxiesByScore, getRandomUserAgent, toPrettyJson } = require("./utils")
+const { sortProxiesByScore, getRandomUserAgent, toPrettyJson, verifyProxy } = require("./utils")
 
 async function getSpysProxies (country_code = "US", onlySSL = false) {
-  let browser, page, bodyHTML;
+  let browser, page, bodyHTML
   try {
     browser = await puppeteer.launch({
       headless: true,
@@ -16,35 +16,35 @@ async function getSpysProxies (country_code = "US", onlySSL = false) {
     await page.setUserAgent(getRandomUserAgent())
     await page.goto(`http://spys.one/free-proxy-list/${country_code}/`)
 
-    await page.waitFor(1000);
+    await page.waitFor(1000)
 
     if (onlySSL) {
       await page.evaluate(() => {
         document.querySelector("select[name=xf2]").value = 1
-      });
+      })
     }
 
     await page.evaluate(() => {
       document.querySelector("select[name=xpp]").value = 5
       document.querySelector("select[name=xf5]").value = 1
-    });
+    })
 
-    await page.waitFor(1000);
+    await page.waitFor(1000)
 
     await page.evaluate(() => {
-      document.getElementsByTagName("form")[0].submit();
-    });
+      document.getElementsByTagName("form")[0].submit()
+    })
 
-    await page.waitForNavigation({ waitUntil: 'load' });
+    await page.waitForNavigation({ waitUntil: 'load' })
 
-    bodyHTML = await page.content();
+    bodyHTML = await page.content()
   } finally {
-    browser.close();
+    browser.close()
   }
 
-  const proxies = parseSpys(bodyHTML);
+  const proxies = parseSpys(bodyHTML)
 
-  return sortProxiesByScore(proxies);
+  return sortProxiesByScore(proxies)
 }
 
 async function getNovaProxies (country_code = "US", onlySSL = false) {
@@ -62,14 +62,11 @@ async function getNovaProxies (country_code = "US", onlySSL = false) {
   })
 
   const response = await instance.get(`/proxy-server-list/country-${country_code}/`)
-  const proxies = parseNova(response.data);
-  return sortProxiesByScore(proxies);
+  const proxies = parseNova(response.data)
+  return sortProxiesByScore(proxies)
 }
 
 module.exports = {
-  toPrettyJson,
-  sortProxiesByScore,
-  getRandomUserAgent,
   parseNova,
   parseSpys,
   getSpysProxies,
