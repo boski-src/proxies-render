@@ -1,6 +1,6 @@
-const { parseNova, parseSpys } = require('./parser')
 const axios = require("axios")
 const puppeteer = require("puppeteer")
+const { parseNova, parseSpys } = require('./parser')
 const { sortProxiesByScore, getRandomUserAgent, toPrettyJson } = require("./utils")
 
 async function getSpysProxies (country_code = "US") {
