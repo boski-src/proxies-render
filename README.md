@@ -13,7 +13,7 @@
   
   --ssl=true              Force ssl proxies
   
-  --testUrl=URL_TO_TEST      [default: https://www.google.com/?q=test] Test url for proxy
+  --testUrl=testUrl      [default: https://www.google.com/?q=test] Test url for proxy
   
 
 ##### Example output (proxies.json)
