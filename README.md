@@ -6,10 +6,15 @@
 
 ##### Render command options:
   -c, --country=country  [default: US] Country code
+  
   -o, --output=output    [default: proxies.json] Output file path
+  
   -s, --source=source    [default: spys.one] Source of proxies (eg. proxynova.com, spys.one)
+  
   --ssl=ssl              Force ssl proxies
+  
   --testUrl=testUrl      [default: https://www.google.com/?q=test] Test url for proxy
+  
 
 ##### Example output (proxies.json)
 ```
