@@ -11,9 +11,9 @@
   
   -s, --source=source    [default: spys.one] Source of proxies (eg. proxynova.com, spys.one)
   
-  --ssl=ssl              Force ssl proxies
+  --ssl=true              Force ssl proxies
   
-  --testUrl=testUrl      [default: https://www.google.com/?q=test] Test url for proxy
+  --testUrl=URL_TO_TEST      [default: https://www.google.com/?q=test] Test url for proxy
   
 
 ##### Example output (proxies.json)
